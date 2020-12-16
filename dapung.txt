@@ -1,0 +1,39 @@
+Chức năng dành cho Khách hàng:
+
+Đăng nhập/Đăng xuất/Đăng ký xong
+Xem DS sản phẩm theo từng danh mục xong 
+Xem chi tiết sản phẩm, chọn mua hàng xong 
+Xem và sửa giỏ hàng xong 
+Tìm kiếm sản phẩm theo ít nhất 2 tiêu chí (tên & giá) xong
+Thanh toán xong 
+Theo dõi trạng thái đơn hàng xong
+
+Bình luận và Đánh giá sản phẩm 50%
+
+
+Chức năng dành cho Người quản trị:
+
+Thêm, sửa, xóa danh mục xong 
+Thêm, sửa, xóa sản phẩm xong
+Xem danh sách người dùng xong
+Xem danh sách bình luận xong
+Trả lời bình luận xong
+Xem danh sách đơn hàng xong
+Xem danh sách đơn hàng theo trạng thái (mới đặt hàng/đã giao hàng…) xong
+Thay đổi trạng thái đơn hàng xong
+
+Xem thống kê đơn hàng, doanh thu (số đơn hàng, tổng tiền hàng ngày, hàng tháng…)
+
+
+Các chức năng mở rộng:
+
+Người dùng lựa chọn số SP mỗi trang xong 
+Phân trang xong
+Giao diện responsive xong
+Sử dụng AJAX xong
+Phân quyền người dùng xong
+
+Sử dụng trình soạn thảo có định dạng (WYSIWYG), có upload file hình ảnh lên máy chủ 50%
+Sử dụng mô hình MVC
+Gửi email thông báo đơn hàng
+Có kiểm soát số lượng hàng hóa, trừ vào số lượng tương ứng khi có người mua hàng, chỉ cho phép mua hàng nếu còn số lượng 33%
