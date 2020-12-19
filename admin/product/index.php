@@ -42,7 +42,7 @@
                                             <div id="slider-range"></div>
                                         </div>
                                         <div class="col-md-1">
-                                            <button type="button" class="btn btn-inverse-info btn-icon" id="addproduct" onclcik="addedit()">
+                                            <button type="button" class="btn btn-inverse-info btn-icon" id="addproduct">
                                                 <i class="ti-file"></i>
                                             </button>
                                         </div>
