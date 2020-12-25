@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th12 19, 2020 lúc 03:42 AM
+-- Thời gian đã tạo: Th12 25, 2020 lúc 12:37 PM
 -- Phiên bản máy phục vụ: 10.4.16-MariaDB
 -- Phiên bản PHP: 7.4.12
 
@@ -432,15 +432,15 @@ INSERT INTO `userlist` (`id`, `email`, `username`, `password`, `class`, `img`, `
 --
 ALTER TABLE `aromaorder`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `iduser` (`iduser`);
+  ADD KEY `aromaorder_ibfk_1` (`iduser`);
 
 --
 -- Chỉ mục cho bảng `aromaorderdetail`
 --
 ALTER TABLE `aromaorderdetail`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idorder` (`idorder`),
-  ADD KEY `idproduct` (`idproduct`);
+  ADD KEY `aromaorderdetail_ibfk_1` (`idorder`),
+  ADD KEY `aromaorderdetail_ibfk_2` (`idproduct`);
 
 --
 -- Chỉ mục cho bảng `brand`
@@ -459,7 +459,7 @@ ALTER TABLE `category`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idproduct` (`idproduct`),
+  ADD KEY `comment_ibfk_1` (`idproduct`),
   ADD KEY `comment_ibfk_2` (`iduser`);
 
 --
@@ -467,8 +467,8 @@ ALTER TABLE `comment`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idbrand` (`idbrand`),
-  ADD KEY `idcategory` (`idcategory`);
+  ADD KEY `product_ibfk_1` (`idbrand`),
+  ADD KEY `product_ibfk_2` (`idcategory`);
 
 --
 -- Chỉ mục cho bảng `userlist`
@@ -530,28 +530,28 @@ ALTER TABLE `userlist`
 -- Các ràng buộc cho bảng `aromaorder`
 --
 ALTER TABLE `aromaorder`
-  ADD CONSTRAINT `aromaorder_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `userlist` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `aromaorder_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `userlist` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Các ràng buộc cho bảng `aromaorderdetail`
 --
 ALTER TABLE `aromaorderdetail`
-  ADD CONSTRAINT `aromaorderdetail_ibfk_1` FOREIGN KEY (`idorder`) REFERENCES `aromaorder` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `aromaorderdetail_ibfk_2` FOREIGN KEY (`idproduct`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `aromaorderdetail_ibfk_1` FOREIGN KEY (`idorder`) REFERENCES `aromaorder` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `aromaorderdetail_ibfk_2` FOREIGN KEY (`idproduct`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Các ràng buộc cho bảng `comment`
 --
 ALTER TABLE `comment`
-  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`idproduct`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `userlist` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`idproduct`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `userlist` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Các ràng buộc cho bảng `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`idbrand`) REFERENCES `brand` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `product_ibfk_2` FOREIGN KEY (`idcategory`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`idbrand`) REFERENCES `brand` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `product_ibfk_2` FOREIGN KEY (`idcategory`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

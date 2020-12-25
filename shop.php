@@ -1,4 +1,3 @@
-<script src="../js/jquery-ui.js"></script>
 <head>
     <title>Aroma Shop - Shop</title>
     <style>
