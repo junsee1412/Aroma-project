@@ -5,7 +5,7 @@ if($_SESSION['iduser']!=0){
     $con = mysqli_connect("localhost", "root", "", "Aroma");
     $su = mysqli_query($con, "SELECT * FROM userlist WHERE id=$_SESSION[iduser]");
     $rsu = mysqli_fetch_assoc($su);
-    if($rsu['class']==1) header("location: /code/midex/admin/product/");
+    if($rsu['class']==1) header("location: /midex/admin/product/");
 }
 include('menu.php');
 ?>

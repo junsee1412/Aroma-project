@@ -24,7 +24,7 @@ $row = mysqli_fetch_assoc($result);
                             while ($rowcat = mysqli_fetch_assoc($rscat))
                             {
                                 $selected = '';
-                                if ($rowcat['id']==$valu['idcategory']||$rowcat['id']==$_GET['idcategory']) $selected = "selected";
+                                if ($rowcat['id']==$row['idcategory']) $selected = "selected";
                                 echo '<option value="'.$rowcat['id'].'" '.$selected.'>'.$rowcat['name'].'</option>';
                             }
                             ?>
@@ -38,7 +38,7 @@ $row = mysqli_fetch_assoc($result);
                             while ($rowbrand = mysqli_fetch_assoc($rsbrand))
                             {
                                 $selected = '';
-                                if ($rowbrand['id']==$valu['idbrand']||$rowbrand['id']==$_GET['idbrand']) $selected = "selected";
+                                if ($rowbrand['id']==$row['idbrand']) $selected = "selected";
                                 echo '<option value="'.$rowbrand['id'].'" '.$selected.'>'.$rowbrand['name'].'</option>';
                             }
                             ?>
