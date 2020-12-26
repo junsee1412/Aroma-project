@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th12 25, 2020 lúc 12:37 PM
+-- Thời gian đã tạo: Th12 26, 2020 lúc 01:40 PM
 -- Phiên bản máy phục vụ: 10.4.16-MariaDB
 -- Phiên bản PHP: 7.4.12
 
@@ -208,8 +208,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `idcategory`, `idbrand`, `img`, `detail`, `price`, `remain`) VALUES
-(32, 'Single Bucket Stool', 1, 31, '/code/midex/asset/img/yvonne-mouser-single-bucket-stool-design.webp', 'a th a haha aaa', 470, 100),
-(33, 'Step Bucket Stool', 1, 31, '/code/midex/asset/img/yvonne-mouser-step-bucket-stool.jpg', '', 420, 100),
+(32, 'Single Bucket Stool', 5, 1, '/code/midex/asset/img/yvonne-mouser-single-bucket-stool-design.webp', 'a th a haha aaa', 470, 100),
+(33, 'Step Bucket Stool', 1, 1, '/code/midex/asset/img/yvonne-mouser-step-bucket-stool.jpg', '', 420, 100),
 (34, 'Long Bucket Stool', 1, 31, '/code/midex/asset/img/yvonne-mouser-bench-bucket-bench.jpg', '', 670, 100),
 (35, 'Yosegi Japanese-Style Multi-Functional Inlaid Stools', 1, 28, '/code/midex/asset/img/tamen-furniture-yosegi-japanese-style-multi-functional-inlaid-stools.jpg', '', 2500, 100),
 (36, 'Dost Steel Footstool', 1, 22, '/code/midex/asset/img/puik-design-furniture-light-grey-dost-steel-footstool.jpg', '', 278, 100),
@@ -396,7 +396,7 @@ INSERT INTO `product` (`id`, `name`, `idcategory`, `idbrand`, `img`, `detail`, `
 (217, 'Polygon Black Side Table', 6, 13, '/code/midex/asset/img/hue-minimal-tables-polygon-black-side-table.webp', '', 385, 100),
 (218, 'Polygon Bordeaux Side Table', 6, 13, '/code/midex/asset/img/hue-minimal-uncategorized-polygon-bordeaux-side-table.webp', '', 385, 100),
 (219, 'Turning Side Table', 6, 17, '/code/midex/asset/img/menu-tables-turning-side-table.webp', '', 650, 100),
-(220, 'Xlibris Wall Desk', 1, 1, '/code/midex/asset/img/sibast-furniture-furniture-smoked-oak-xlibris-wall-desk.webp', '', 1250, 100);
+(220, 'Xlibris Wall Desk', 3, 1, '/code/midex/asset/img/sibast-furniture-furniture-smoked-oak-xlibris-wall-desk.webp', '', 1250, 100);
 
 -- --------------------------------------------------------
 
@@ -514,7 +514,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
 
 --
 -- AUTO_INCREMENT cho bảng `userlist`
@@ -545,13 +545,6 @@ ALTER TABLE `aromaorderdetail`
 ALTER TABLE `comment`
   ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`idproduct`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `userlist` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Các ràng buộc cho bảng `product`
---
-ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`idbrand`) REFERENCES `brand` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `product_ibfk_2` FOREIGN KEY (`idcategory`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
