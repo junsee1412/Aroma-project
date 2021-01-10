@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="/code/midex/">
+            <a class="nav-link" href="../../">
                 <i class="ti-home menu-icon"></i>
                 <span class="menu-title">Aroma Shop</span>
             </a>
